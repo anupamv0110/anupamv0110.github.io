@@ -11,6 +11,13 @@
 </head>
 <body>
 
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -34,13 +41,14 @@
   <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-bg">
+      <canvas id="networkCanvas"></canvas>
       <div class="blob blob1"></div>
       <div class="blob blob2"></div>
       <div class="particles" id="particles"></div>
     </div>
     <div class="hero-content">
       <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name">Anupam Vishwakarma</h1>
+      <h1 class="hero-name" data-text="Anupam Vishwakarma">Anupam Vishwakarma</h1>
       <div class="hero-role">
         <span class="role-text" id="roleText"></span><span class="cursor">|</span>
       </div>
