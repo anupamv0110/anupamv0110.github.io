@@ -150,7 +150,7 @@ function handleFormSubmit(e) {
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
   // Build mailto link as fallback (no server needed for static site)
-  const mailto = `mailto:rahulrao@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+  const mailto = `mailto:anupam.v0110@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
   window.location.href = mailto;
 
   setTimeout(() => {
