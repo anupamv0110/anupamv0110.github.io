@@ -2,11 +2,19 @@
 const cursorDot  = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
 let ringX = 0, ringY = 0, dotX = 0, dotY = 0;
+let cursorReady = false;
 
 document.addEventListener('mousemove', e => {
   dotX = e.clientX; dotY = e.clientY;
   cursorDot.style.left  = dotX + 'px';
   cursorDot.style.top   = dotY + 'px';
+  if (!cursorReady) {
+    cursorReady = true;
+    ringX = dotX; ringY = dotY;
+    document.body.classList.add('custom-cursor');
+    cursorDot.style.opacity  = '1';
+    cursorRing.style.opacity = '1';
+  }
 });
 function animateRing() {
   ringX += (dotX - ringX) * 0.12;

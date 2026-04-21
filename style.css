@@ -881,8 +881,9 @@ body {
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s, background 0.2s, width 0.2s, height 0.2s;
+  transition: transform 0.1s, background 0.2s, width 0.2s, height 0.2s, opacity 0.3s;
   box-shadow: 0 0 8px var(--accent);
+  opacity: 0;
 }
 .cursor-ring {
   position: fixed;
@@ -892,7 +893,8 @@ body {
   pointer-events: none;
   z-index: 9997;
   transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s;
+  transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+  opacity: 0;
 }
 .cursor-ring.hovering {
   width: 56px; height: 56px;
@@ -903,8 +905,11 @@ body {
   width: 4px; height: 4px;
   background: var(--primary);
 }
-body { cursor: none; }
-a, button, .project-card, .timeline-card, .skill-category, .cert-card, .edu-card, .achievement-card { cursor: none; }
+/* cursor:none applied via JS after first mousemove */
+body.custom-cursor, body.custom-cursor a, body.custom-cursor button,
+body.custom-cursor .project-card, body.custom-cursor .timeline-card,
+body.custom-cursor .skill-category, body.custom-cursor .cert-card,
+body.custom-cursor .edu-card, body.custom-cursor .achievement-card { cursor: none; }
 
 /* ========== Canvas Network ========== */
 #networkCanvas {
