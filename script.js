@@ -1,3 +1,18 @@
+// ===== Theme Toggle =====
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon   = document.getElementById('themeIcon');
+const savedTheme  = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+  document.body.classList.add('light-theme');
+  themeIcon.className = 'fas fa-moon';
+}
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  const isLight = document.body.classList.contains('light-theme');
+  themeIcon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
 // ===== Custom Cursor =====
 const cursorDot  = document.getElementById('cursorDot');
 const cursorRing = document.getElementById('cursorRing');
@@ -25,7 +40,7 @@ function animateRing() {
 }
 animateRing();
 
-document.querySelectorAll('a, button, .project-card, .timeline-card, .skill-category, .cert-card, .edu-card, .achievement-card, .tag').forEach(el => {
+document.querySelectorAll('a, button, .project-card, .timeline-card, .skill-category, .cert-card, .edu-card, .achievement-card, .tag, .domain-card, .tech-orb').forEach(el => {
   el.addEventListener('mouseenter', () => { cursorDot.classList.add('hovering'); cursorRing.classList.add('hovering'); });
   el.addEventListener('mouseleave', () => { cursorDot.classList.remove('hovering'); cursorRing.classList.remove('hovering'); });
 });
@@ -248,7 +263,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.timeline-card, .skill-category, .skills-bars, .project-card, .edu-card, .cert-card, .achievement-card, .contact-info, .contact-form-wrap').forEach(el => {
+document.querySelectorAll('.timeline-card, .skill-category, .skills-bars, .project-card, .edu-card, .cert-card, .achievement-card, .contact-info, .contact-form-wrap, .domain-card').forEach(el => {
   el.classList.add('animate-on-scroll');
   observer.observe(el);
 });
@@ -383,7 +398,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 // Observe all animatable elements
-document.querySelectorAll('.timeline-card, .skill-category, .skills-bars, .project-card, .edu-card, .cert-card, .achievement-card, .contact-info, .contact-form-wrap').forEach(el => {
+document.querySelectorAll('.timeline-card, .skill-category, .skills-bars, .project-card, .edu-card, .cert-card, .achievement-card, .contact-info, .contact-form-wrap, .domain-card').forEach(el => {
   el.classList.add('animate-on-scroll');
   observer.observe(el);
 });

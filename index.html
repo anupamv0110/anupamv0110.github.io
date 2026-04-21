@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
 
@@ -26,12 +27,16 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#tech">Tech</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+      </button>
       <button class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
       </button>
@@ -47,6 +52,7 @@
       <div class="particles" id="particles"></div>
     </div>
     <div class="hero-content">
+      <div class="hero-position-badge"><i class="fas fa-robot"></i> AIML Engineer &amp; Python Developer</div>
       <p class="hero-greeting">Hello, I'm</p>
       <h1 class="hero-name" data-text="Anupam Vishwakarma">Anupam Vishwakarma</h1>
       <div class="hero-role">
@@ -120,6 +126,84 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Universe -->
+  <section class="section tech-universe-section" id="tech">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Arsenal</span>
+        <h2 class="section-title">Tech Universe</h2>
+      </div>
+      <div class="tech-orbit-wrap">
+        <!-- Center -->
+        <div class="tech-center">
+          <i class="fas fa-brain"></i>
+          <span>AIML</span>
+        </div>
+        <!-- Orbit 1: Core -->
+        <div class="tech-orbit orbit-1">
+          <div class="tech-orb" style="--i:0" data-label="Python"><i class="devicon-python-plain colored"></i></div>
+          <div class="tech-orb" style="--i:1" data-label="Django"><i class="devicon-django-plain"></i></div>
+          <div class="tech-orb" style="--i:2" data-label="FastAPI"><i class="devicon-fastapi-plain colored"></i></div>
+          <div class="tech-orb" style="--i:3" data-label="TensorFlow"><i class="devicon-tensorflow-original colored"></i></div>
+        </div>
+        <!-- Orbit 2: Data & Cloud -->
+        <div class="tech-orbit orbit-2">
+          <div class="tech-orb" style="--i:0" data-label="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></div>
+          <div class="tech-orb" style="--i:1" data-label="MongoDB"><i class="devicon-mongodb-plain colored"></i></div>
+          <div class="tech-orb" style="--i:2" data-label="MySQL"><i class="devicon-mysql-plain colored"></i></div>
+          <div class="tech-orb" style="--i:3" data-label="Redis"><i class="devicon-redis-plain colored"></i></div>
+          <div class="tech-orb" style="--i:4" data-label="Docker"><i class="devicon-docker-plain colored"></i></div>
+          <div class="tech-orb" style="--i:5" data-label="GCP"><i class="devicon-googlecloud-plain colored"></i></div>
+        </div>
+        <!-- Orbit 3: Tools -->
+        <div class="tech-orbit orbit-3">
+          <div class="tech-orb" style="--i:0" data-label="Linux"><i class="devicon-linux-plain"></i></div>
+          <div class="tech-orb" style="--i:1" data-label="Git"><i class="devicon-git-plain colored"></i></div>
+          <div class="tech-orb" style="--i:2" data-label="Jenkins"><i class="devicon-jenkins-plain colored"></i></div>
+          <div class="tech-orb" style="--i:3" data-label="NumPy"><i class="devicon-numpy-plain colored"></i></div>
+          <div class="tech-orb" style="--i:4" data-label="Pandas"><i class="devicon-pandas-plain"></i></div>
+          <div class="tech-orb" style="--i:5" data-label="OpenCV"><i class="devicon-opencv-plain colored"></i></div>
+          <div class="tech-orb" style="--i:6" data-label="AWS"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+          <div class="tech-orb" style="--i:7" data-label="JIRA"><i class="devicon-jira-plain colored"></i></div>
+        </div>
+      </div>
+
+      <!-- Tech domain cards -->
+      <div class="tech-domains">
+        <div class="domain-card">
+          <div class="domain-img domain-ai"><i class="fas fa-brain"></i></div>
+          <h3>Artificial Intelligence</h3>
+          <p>GPT-4 Vision, Gemini Pro, LLM fine-tuning, prompt engineering &amp; AI agent development.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-img domain-ml"><i class="fas fa-chart-line"></i></div>
+          <h3>Machine Learning</h3>
+          <p>Supervised / unsupervised learning, NLP pipelines, model training on 16M+ datasets &amp; deployment.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-img domain-cloud"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud &amp; DevOps</h3>
+          <p>Google Cloud Platform, Docker, Jenkins CI/CD, Grafana monitoring &amp; Prometheus metrics.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-img domain-db"><i class="fas fa-database"></i></div>
+          <h3>Databases &amp; Caching</h3>
+          <p>PostgreSQL, MongoDB, MySQL, Oracle, Redis cache &amp; Celery async task queues.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-img domain-web"><i class="fas fa-globe"></i></div>
+          <h3>Web &amp; APIs</h3>
+          <p>Django, FastAPI, REST Framework, Streamlit web apps &amp; Google Marketplace Add-ons.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-img domain-robot"><i class="fas fa-robot"></i></div>
+          <h3>Robotics &amp; CV</h3>
+          <p>ROS robotics, OpenCV computer vision, face detection &amp; autonomous rescue systems.</p>
         </div>
       </div>
     </div>
