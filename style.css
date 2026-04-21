@@ -353,6 +353,17 @@ body {
   color: var(--primary);
   font-family: var(--font-mono);
   animation: rotate 10s linear infinite reverse;
+  overflow: hidden;
+}
+.avatar-inner.avatar-photo {
+  background: none;
+}
+.avatar-inner.avatar-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 .about-info-cards {
   display: flex;
