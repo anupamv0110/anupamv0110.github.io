@@ -1623,6 +1623,7 @@ body.light-theme .aiml-cta-strip {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 2.5rem;
 }
 .hero-photo-blob {
   position: absolute;
@@ -1659,20 +1660,42 @@ body.light-theme .aiml-cta-strip {
   animation: heroRingRotate 8s linear infinite reverse;
 }
 
-/* ========== Dribbble-Inspired: About AI Brain SVG ========== */
-.about-brain-svg {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 1.2rem;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 12px rgba(108,99,255,0.35));
-  animation: brainPulse 4s ease-in-out infinite;
+/* ========== Dribbble-Inspired: Floating Skill Chips on Hero Photo ========== */
+.float-chip {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  background: rgba(10, 9, 20, 0.75);
+  border: 1px solid rgba(108,99,255,0.35);
+  backdrop-filter: blur(12px);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  animation: chipFloat 3s ease-in-out infinite;
 }
-@keyframes brainPulse {
-  0%,100% { filter: drop-shadow(0 0 10px rgba(108,99,255,0.3)); }
-  50%     { filter: drop-shadow(0 0 22px rgba(0,212,170,0.45)); }
+.float-chip i { font-size: 1rem; }
+.float-chip.chip-tl { top: 10px;   left: -30px;  animation-delay: 0s;    border-color: rgba(108,99,255,0.4); }
+.float-chip.chip-tr { top: 30px;   right: -30px; animation-delay: 0.75s; border-color: rgba(0,212,170,0.4);  color: var(--accent); }
+.float-chip.chip-bl { bottom: 30px; left: -30px; animation-delay: 1.5s;  border-color: rgba(108,99,255,0.4); }
+.float-chip.chip-br { bottom: 10px; right: -30px; animation-delay: 2.25s; border-color: rgba(168,85,247,0.4); color: #c084fc; }
+@keyframes chipFloat {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-6px); }
 }
-.about-brain-svg svg { width: 100%; height: 100%; }
+body.light-theme .float-chip {
+  background: rgba(255,255,255,0.85);
+  color: #1a1a2e;
+}
+@media (max-width: 900px) {
+  .float-chip { display: none; }
+}
 
 /* Light theme overrides for new elements */
 body.light-theme .hero-photo-blob {
