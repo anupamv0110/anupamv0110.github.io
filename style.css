@@ -1038,6 +1038,7 @@ body.light-theme .theme-toggle { background: rgba(108,99,255,0.12); }
   .orbit-2 { width: 230px; height: 230px; }
   .orbit-3 { display: none; }
   .tech-orb { width: 40px; height: 40px; font-size: 1.3rem; }
+  .tech-orb img { width: 26px; height: 26px; }
   .tech-domains { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1154,6 +1155,7 @@ body.light-theme .theme-toggle { background: rgba(108,99,255,0.12); }
   pointer-events: none;
 }
 .tech-orb:hover::after { opacity: 1; }
+.tech-orb img { width: 36px; height: 36px; object-fit: contain; pointer-events: none; display: block; }
 
 /* ========== Per-icon brand backgrounds & hover glows ========== */
 .orb-python  { background: rgba(55,118,171,0.12);  border-color: rgba(55,118,171,0.4);  }
