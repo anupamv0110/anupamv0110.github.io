@@ -67,7 +67,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // ===== Typewriter =====
-const roles = ['AIML Engineer','Python Developer','Django Expert','Data Scientist','Cloud Architect (GCP)','LLM Engineer'];
+const roles = ['AIML Engineer','Python Developer','Django Expert','Data Scientist','Software Developer','Cloud Architect (GCP)','LLM Engineer'];
 let roleIdx = 0, charIdx = 0, deleting = false;
 const roleText = document.getElementById('roleText');
 function typeWriter() {
