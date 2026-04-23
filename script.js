@@ -280,6 +280,94 @@ window.addEventListener('scroll', () => {
   navAnchors.forEach(a => { a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : ''; });
 });
 
+// ===== Global Wave-Dots Background Canvas =====
+(function initBgCanvas() {
+  const canvas = document.getElementById('bgCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  const PARTICLE_COUNT = 110;
+  const CONNECT_DIST   = 160;
+  const BASE_SPEED     = 0.35;
+  const WAVE_AMP       = 0.6;   // amplitude of sinusoidal drift
+  const WAVE_FREQ      = 0.0018; // horizontal frequency
+
+  let particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function createParticle() {
+    return {
+      x:     Math.random() * W,
+      y:     Math.random() * H,
+      vx:    (Math.random() - 0.5) * BASE_SPEED,
+      vy:    (Math.random() - 0.5) * BASE_SPEED,
+      r:     Math.random() * 1.8 + 1,
+      phase: Math.random() * Math.PI * 2,
+      speed: BASE_SPEED * (0.5 + Math.random()),
+      hue:   Math.random() > 0.55 ? '108,99,255' : '0,212,170'
+    };
+  }
+
+  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+
+  let tick = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    tick++;
+
+    particles.forEach(p => {
+      // wave-drift: sinusoidal nudge perpendicular to motion
+      const wave = Math.sin(tick * WAVE_FREQ + p.phase) * WAVE_AMP;
+      p.x += p.vx + wave;
+      p.y += p.vy;
+
+      // wrap edges smoothly
+      if (p.x < -10) p.x = W + 10;
+      else if (p.x > W + 10) p.x = -10;
+      if (p.y < -10) p.y = H + 10;
+      else if (p.y > H + 10) p.y = -10;
+    });
+
+    // draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECT_DIST) {
+          const alpha = (1 - dist / CONNECT_DIST) * 0.45;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(108,99,255,${alpha})`;
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // draw dots
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.hue},0.85)`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+
 // ===== Contact Form =====
 function handleFormSubmit(e) {
   e.preventDefault();

@@ -72,6 +72,25 @@ body.light-theme .tech-center { background: linear-gradient(135deg, var(--primar
 body.light-theme .hero-stats { background: rgba(108,99,255,0.06); }
 body.light-theme .info-card { background: var(--bg2); }
 
+/* ========== Global Wave-Dots Background Canvas ========== */
+#bgCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.38;
+  pointer-events: none;
+}
+body.light-theme #bgCanvas { opacity: 0.12; }
+
+/* Ensure all page content sits above the canvas */
+.navbar, .hero, .section, .aiml-cta-strip, .footer,
+.scroll-progress, .cursor-dot, .cursor-ring {
+  position: relative;
+  z-index: 1;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
