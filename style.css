@@ -41,12 +41,12 @@ body.light-theme .hero {
 }
 body.light-theme .blob { opacity: 0.08; }
 body.light-theme #networkCanvas { opacity: 0.3; }
-body.light-theme .section-dark { background: rgba(232, 234, 246, 0.85); }
+body.light-theme .section-dark { background: transparent; }
 body.light-theme .skill-bar-track { background: rgba(0,0,0,0.08); }
 body.light-theme .timeline::before { background: linear-gradient(180deg, var(--primary), var(--accent)); }
 body.light-theme .nav-links a { color: var(--text-muted); }
 body.light-theme .nav-links a:hover { color: var(--primary); background: rgba(108,99,255,0.08); }
-body.light-theme .footer { background: rgba(232, 234, 246, 0.92); }
+body.light-theme .footer { background: transparent; }
 body.light-theme .avatar-inner { background: var(--bg2); }
 body.light-theme .section-title {
   background: linear-gradient(135deg, var(--text) 60%, var(--primary));
@@ -444,7 +444,7 @@ body.light-theme .theme-toggle { background: rgba(108,99,255,0.12); }
 
 /* ========== Sections ========== */
 .section { padding: 6rem 0; }
-.section-dark { background: rgba(12, 15, 29, 0.82); }
+.section-dark { background: transparent; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 .section-header {
@@ -992,7 +992,7 @@ body.light-theme .theme-toggle { background: rgba(108,99,255,0.12); }
 
 /* ========== Footer ========== */
 .footer {
-  background: rgba(12, 15, 29, 0.88);
+  background: transparent;
   border-top: 1px solid var(--border);
   padding: 2rem 0;
 }
