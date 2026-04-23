@@ -311,7 +311,7 @@ window.addEventListener('scroll', () => {
       r:     Math.random() * 1.8 + 1,
       phase: Math.random() * Math.PI * 2,
       speed: BASE_SPEED * (0.5 + Math.random()),
-      hue:   Math.random() > 0.55 ? '108,99,255' : '0,212,170'
+      hue:   '249,200,70'
     };
   }
 
@@ -347,7 +347,7 @@ window.addEventListener('scroll', () => {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(108,99,255,${alpha})`;
+          ctx.strokeStyle = `rgba(249,200,70,${alpha})`;
           ctx.lineWidth = 0.7;
           ctx.stroke();
         }
