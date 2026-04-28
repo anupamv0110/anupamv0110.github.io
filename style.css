@@ -795,6 +795,7 @@ body.light-theme .theme-toggle { background: rgba(108,99,255,0.12); }
 }
 .edu-body h3 { font-size: 0.95rem; color: var(--text); margin-bottom: 0.4rem; }
 .edu-inst { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+.edu-score { font-size: 0.85rem; color: var(--primary); margin-top: 0.5rem; }
 
 /* Certifications */
 .cert-grid {
